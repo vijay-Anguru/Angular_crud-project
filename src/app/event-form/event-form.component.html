@@ -1,0 +1,53 @@
+<!-- event-form.component.html -->
+
+<div class="card p-5" style="margin: auto; width: 1000px; margin-top: 20px;">
+
+  <h3>Event form</h3>
+  <form [formGroup]="eventForm" >
+    <div >
+      <label>Event Name:</label>
+      <input formControlName="EventName" type="text">
+      <div *ngIf="EventName && (EventName.dirty || EventName.touched)">
+        <div *ngIf="EventName.errors.required">
+          Event name is required
+        </div>
+      </div>
+
+      <label>Event Date:</label>
+      <input formControlName="EventDate" type="date">
+      <div *ngIf="EventDate && (EventDate.dirty || EventDate.touched)">
+        <div *ngIf="EventDate.errors.required">
+          Event date is required
+        </div>
+      </div>
+
+      <label>Location:</label>
+      <input formControlName="location" type="text">
+      <div *ngIf="location && (location.dirty || location.touched)">
+        <div *ngIf="location.errors.required">
+          Location is required
+        </div>
+      </div>
+
+      <label>Description:</label>
+      <textarea formControlName="Description"></textarea>
+      <div *ngIf="Description && (Description.dirty || Description.touched)">
+        <div *ngIf="Description.errors.required">
+          Description is required
+        </div>
+      </div>
+
+      <label>Organizer:</label>
+      <input formControlName="Organizer" type="text">
+      <div *ngIf="organizer && (Organizer.dirty || Organizer.touched)">
+        <div *ngIf="Organizer.errors.required">
+          Organizer is required
+        </div>
+      </div>
+    </div>
+
+
+    <button type="button" (click)="addEvent()">Submit</button>
+    
+  </form>
+</div>

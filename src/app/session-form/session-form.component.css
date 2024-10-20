@@ -1,0 +1,20 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: #007bff; /* Blue for Save */
+}
+
+select[formControlName="EventId"] {
+  font-size: 100px; /* adjust the font size to your liking */
+}
+button:hover {
+  background-color: #0056b3;
+}
+.large-dropdown {
+  width: 300px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  font-size: 16px; /* Adjust font size if necessary */
+}

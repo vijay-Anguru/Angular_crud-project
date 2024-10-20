@@ -1,0 +1,70 @@
+<div class="card p-5" style="margin: auto; width: 1000px; margin-top: 20px;">
+
+  <h3>Session Form</h3>
+  <form [formGroup]="sessionForm">
+    <div>
+
+      <!-- <div>
+        <label for="" style="display: block;">Select Event</label>
+        <select>
+          <option value="">Select an option</option>
+          <option *ngFor="let option of events" [value]="option.EventId" formControlName="EventId">{{ option.EventName
+            }}</option>
+        </select>
+      </div> -->
+      <div>
+        <label for="Event">Event</label>
+        <select
+          formControlName="EventId"
+          class="large-dropdown"
+          placeholder="Select Event">
+          <option *ngFor="let event of events" [value]="event.EventId">
+            {{ event.EventName }}
+          </option>
+        </select>
+      </div>
+      
+
+      <label>Session Name:</label>
+      <input formControlName="SessionName" type="text">
+      <div *ngIf="SessionName && (SessionName.dirty || SessionName.touched)">
+        <div *ngIf="SessionName.errors.required">
+          Session name is required
+        </div>
+      </div>
+      
+
+       <label>Start Time:</label>
+      <input formControlName="SessionStartTime" type="datetime-local">
+      <div *ngIf="SessionStartTime && (SessionStartTime.dirty || SessionStartTime.touched)">
+        
+
+        <div *ngIf="SessionStartTime.errors.required">
+          Start time is required
+        </div>
+      </div> 
+
+      <label>End Time:</label>
+      <input formControlName="SessionEndTime" type="datetime-local">
+      <div *ngIf="SessionEndTime && (SessionEndTime.dirty || SessionEndTime.touched)">
+        <div *ngIf="SessionEndTime.errors.required">
+          End time is required
+        </div>
+      </div>
+
+  
+      <label>Session Description:</label>
+      <textarea formControlName="SessionDescription"></textarea>
+      <div *ngIf="SessionDescription && (SessionDescription.dirty || SessionDescription.touched)">
+        <div *ngIf="SessionDescription.errors.required">
+          Session description is required
+        </div>
+      </div>
+    </div>
+
+
+
+    <button *ngIf="SessionId > 0" type="button" class="btn btn-primary" (click)="updatesession()">update Session</button>
+    <button *ngIf="SessionId == undefined"  type="button" class="btn btn-primary" (click)="createSession()">Save Session</button>
+  </form>
+</div>

@@ -1,0 +1,50 @@
+<div class="card p-5" style="margin: auto; width: 1000px; margin-top: 20px;">
+  <h3>Speaker Form</h3>
+  <form [formGroup]="speakerForm">
+    <div>
+      <div>
+        <label for="Event">session</label>
+        <select
+          formControlName="SessionId"
+          class="large-dropdown"
+          placeholder="Select session">
+          <option *ngFor="let s of session" [value]="s.SessionId">
+            {{ s.SessionName }}
+          </option>
+        </select>
+      </div>
+      
+
+      <label>Speaker Name:</label>
+      <input formControlName="SpeakerName" type="text">
+      <div *ngIf="SpeakerName && (SpeakerName.dirty || SpeakerName.touched)">
+        <div *ngIf="SpeakerName.errors.required">
+          Speaker name is required
+        </div>
+      </div>
+
+      <label>Speaker Email:</label>
+      <input formControlName="SpeakerEmail" type="email">
+      <div *ngIf="SpeakerEmail && (SpeakerEmail.dirty || SpeakerEmail.touched)">
+        <div *ngIf="SpeakerEmail.errors.required">
+          Speaker email is required
+        </div>
+        <div *ngIf="SpeakerEmail.errors.email">
+          Invalid email address
+        </div>
+      </div>
+
+      <label>Speaker Bio:</label>
+      <textarea formControlName="SpeakerBio"></textarea>
+      <div *ngIf="SpeakerBio && (SpeakerBio.dirty || SpeakerBio.touched)">
+        <div *ngIf="SpeakerBio.errors.required">
+          Speaker bio is required
+        </div>
+      </div>
+
+    </div>
+
+    <button *ngIf="speakerId > 0" type="button" class="btn btn-primary" (click)="updatespeaker()">update Speaker</button>
+    <button *ngIf="speakerId == undefined"  type="button" class="btn btn-primary" (click)="createSpeaker()">Save Speaker</button>
+  </form>
+</div>

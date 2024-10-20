@@ -1,0 +1,35 @@
+.auth-container {
+  max-width: 400px; /* Maximum width */
+  width: 100%; /* Allow it to scale down */
+  margin: 20px auto; /* Centering with auto margins */
+  padding: 20px;
+  background: #fff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+h2 {
+  text-align: center; /* Center the headings */
+}
+
+input {
+  width: 100%; /* Full width of the container */
+  padding: 10px; /* Padding for inputs */
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ccc; /* Input border */
+  border-radius: 5px; /* Rounded corners for inputs */
+}
+ng 
+button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Padding for button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners for button */
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  cursor: pointer; /* Pointer cursor for button */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker button color on hover */
+}

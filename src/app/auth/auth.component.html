@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<div class="auth-container">
+
+  <form [formGroup]="loginForm" >
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" formControlName="email" placeholder="Email" required />
+      <!-- <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">
+          Email is required
+        </div>
+        <div *ngIf="email.errors.email">
+          Invalid email address
+        </div>
+      </div> -->
+    </div>
+
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" formControlName="password" placeholder="Password" required />
+      <!-- <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">
+          Password is required
+        </div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 8 characters long
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Add a margin-bottom to create space between password field and login button -->
+    <div style="margin-bottom: 20px;"></div>
+
+  </form>
+<div style="display: flex;">
+   <button type="submit"  (click)="onLogin(loginForm.value)">Login</button> 
+  <button (click)="onRegister(loginForm.value)" style="margin-left: 5px;">Register</button>
+</div>
+</div>

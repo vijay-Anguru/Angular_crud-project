@@ -1,0 +1,5 @@
+<!-- speaker-list.component.html -->
+<div *ngFor="let speaker of speakers">
+  <h5>{{ speaker.speakerName }}</h5>
+</div>
+<button (click)="createSpeaker()">Add Speaker</button>

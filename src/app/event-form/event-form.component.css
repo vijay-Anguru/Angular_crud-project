@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    background-color: #007bff; /* Blue for Save */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,21 @@
+<!-- session-list.component.html -->
+
+<button (click)="createSession()" class="btn btn-sm btn-primary mr-5 mb-5">Create Session</button>
+
+<table class="table table-striped table-bordered" style="width: 1000px; padding: 32px;">
+  <thead>
+    <tr>
+      <th>Sr No.</th>
+      <th>SessionName</th>
+      <th>SessionStartTime</th>
+      <th>SessionEndTime</th>
+      <th>SessionDescription</th>
+      <th>EventId</th>
+       <th>Action</th> 
+    </tr>
+  </thead>
+<div *ngFor="let session of sessions">
+  <h4>{{ session.sessionName }}</h4>
+  <app-speaker-list [sessionId]="session.id"></app-speaker-list>
+</div>
+<button (click)="createSession()">Add Session</button>

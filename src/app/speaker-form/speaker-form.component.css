@@ -1,0 +1,41 @@
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  width: 1000px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+button[type="button"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"]:hover {
+  background-color: #3e8e41;
+}
+  
